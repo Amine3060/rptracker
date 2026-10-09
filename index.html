@@ -1,0 +1,408 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>War Thunder RP Tracker</title>
+<style>:root{--bg:#0d1115;--panel:#161c23;--panel2:#1d252e;--input:#0b0f13;--line:#26313b;--accent:#4da3ff;--text:#eef1f4;--muted:#8996a3;--ok:#34d399;--bad:#f87171;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1115;--panel:#161c23;--panel2:#1d252e;--input:#0b0f13;--line:#26313b;--text:#eef1f4;--muted:#8996a3}}:root[data-theme="dark"]{--bg:#0d1115;--panel:#161c23;--panel2:#1d252e;--input:#0b0f13;--line:#26313b;--text:#eef1f4;--muted:#8996a3}:root[data-theme="light"]{--bg:#f2f0eb;--panel:#fff;--panel2:#f6f4ef;--input:#f6f4ef;--line:#ddd8cd;--accent:#c76d12;--text:#1d2329;--muted:#5d6975}*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;background:var(--bg);background-image:radial-gradient(900px 400px at 85% -10%,rgba(77,163,255,.14),transparent),radial-gradient(700px 400px at -10% 10%,rgba(80,120,200,.08),transparent);background-repeat:no-repeat;color:var(--text);font-family:Inter,"Segoe UI",system-ui,-apple-system,Roboto,sans-serif;line-height:1.45}.wrap{max-width:1150px;margin:0 auto;padding:24px 16px 48px}header{display:flex;align-items:center;gap:14px;margin-bottom:6px}.logo{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,#70b7ff,#2563eb);display:grid;place-items:center;color:#1a1004;flex:none}h1{margin:0;font-size:1.55rem;letter-spacing:.03em}h1 span{color:var(--accent)}.sub{color:var(--muted);margin:0;font-size:.9rem}.notice{display:flex;gap:10px;align-items:flex-start;border:1px solid rgba(77,163,255,.4);background:rgba(77,163,255,.08);padding:10px 14px;margin:16px 0 20px;font-size:.88rem;border-radius:12px}.grid{display:grid;grid-template-columns:330px 1fr;gap:20px;align-items:start}@media (max-width:880px){.grid{grid-template-columns:1fr}}.panel{background:var(--panel);border:1px solid var(--line);padding:18px;border-radius:16px;margin-bottom:18px;box-shadow:0 10px 30px rgba(0,0,0,.18)}.panel h2{margin:0 0 14px;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}label{display:block;font-size:.76rem;color:var(--muted);margin:0 0 4px}input[type=text],input[type=number],select{width:100%;background:var(--input);color:var(--text);border:1px solid var(--line);padding:9px 12px;margin-bottom:12px;font:inherit;border-radius:10px}input[type=file]{width:100%;margin-bottom:12px;color:var(--muted);font-size:.8rem}input:focus,select:focus{outline:2px solid rgba(77,163,255,.5);border-color:var(--accent)}.chk{display:flex;gap:8px;align-items:center;margin:0 0 14px;color:var(--text);font-size:.92rem}.btn{background:linear-gradient(135deg,#70b7ff,#3b82f6);color:#1a1004;border:0;padding:10px 18px;font:inherit;font-weight:700;cursor:pointer;border-radius:999px}.btn:hover{filter:brightness(1.08)}.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}.btn.sm{padding:4px 11px;font-size:.78rem;font-weight:600}.err{color:var(--bad);margin-top:8px;min-height:1.2em;font-size:.88rem}.timers{display:grid;grid-template-columns:1fr 1fr;gap:12px}.timer{background:var(--panel2);padding:14px;border-radius:14px;border:1px solid var(--line)}.timer .t{font-size:1.55rem;font-weight:700;font-variant-numeric:tabular-nums;color:var(--accent)}.timer .l{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}.timer .btn{margin-top:10px;width:100%;padding:8px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:12px;margin-bottom:18px}.card{background:var(--panel);border:1px solid var(--line);padding:14px;border-radius:14px;position:relative;overflow:hidden}.card:before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),transparent)}.card .v{font-size:1.5rem;font-weight:700;font-variant-numeric:tabular-nums}.card .k{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}.veh{display:flex;gap:14px;align-items:center;margin-bottom:14px}.vimg{width:84px;height:56px;border-radius:12px;background:var(--panel2);border:1px solid var(--line);display:grid;place-items:center;overflow:hidden;color:var(--accent);flex:none}.vimg img{width:100%;height:100%;object-fit:contain;object-position:center;padding:3px;display:block}.vimg svg{width:36px;height:36px;fill:currentColor}.vname{font-size:1.25rem;font-weight:700}.vmeta{font-size:.82rem;color:var(--muted)}.bar{height:12px;background:var(--input);border-radius:999px;overflow:hidden;border:1px solid var(--line)}.bar>div{height:100%;width:0;background:linear-gradient(90deg,#70b7ff,#3b82f6);border-radius:999px;transition:width .4s}.ptext{font-size:.9rem;margin:8px 0 14px;color:var(--muted)}.est{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:16px}.est div{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px 12px}.est b{display:block;font-size:1.05rem}.est span{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media (max-width:520px){.row2{grid-template-columns:1fr}}textarea{width:100%;background:var(--input);color:var(--text);border:1px solid var(--line);padding:9px 12px;margin-bottom:12px;font:inherit;font-size:.85rem;border-radius:10px;resize:vertical}.vlist{max-height:260px;overflow-y:auto;border:1px solid var(--line);border-radius:12px;margin:6px 0;background:var(--input);box-shadow:0 12px 28px rgba(0,0,0,.24)}.vlist:empty{display:none}.vi{display:flex;gap:10px;align-items:center;padding:8px 12px;cursor:pointer;border-bottom:1px solid var(--line)}.vi:hover{background:var(--panel2)}.vi.on{background:rgba(77,163,255,.14)}.vi-i{width:44px;height:30px;border-radius:8px;background:var(--panel2);display:grid;place-items:center;overflow:hidden;color:var(--accent);flex:none}.vi-i svg{width:22px;height:22px;fill:currentColor}.vi-i img{width:100%;height:100%;object-fit:contain;object-position:center;padding:2px;display:block}.vi-n{flex:1;min-width:0}.vi-n b{display:block;font-size:.92rem}.vi-n small{color:var(--muted);font-size:.74rem}.vi-c{font-variant-numeric:tabular-nums;font-size:.85rem;color:var(--accent);font-weight:600}.vi-e{padding:12px;color:var(--muted);font-size:.85rem}.btns{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}details{margin-top:4px}summary{cursor:pointer;color:var(--accent);font-weight:600;font-size:.9rem;margin-bottom:12px}.scroll{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:520px}th{text-align:left;color:var(--muted);padding:8px 10px;font-weight:600;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;border-bottom:1px solid var(--line)}td{padding:9px 10px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}.win{color:var(--ok);font-weight:600}.loss{color:var(--bad);font-weight:600}.empty{color:var(--muted);padding:12px 4px}.foot{color:var(--muted);font-size:.76rem;margin:10px 0 0}.api-status{padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--panel2);font-size:.82rem;color:var(--muted);margin:0 0 12px}.api-status strong{color:var(--text)}:root{--bg:#0d1115;--panel:#161c23;--panel2:#1d252e;--input:#0b0f13;--line:#26313b;--accent:#f09a3e;--text:#eef1f4;--muted:#8996a3;--ok:#34d399;--bad:#f87171}:root[data-theme="light"]{--bg:#f2f0eb;--panel:#fff;--panel2:#f6f4ef;--input:#f6f4ef;--line:#ddd8cd;--accent:#c76d12;--text:#1d2329;--muted:#5d6975;--ok:#16845d;--bad:#c83d51}body{background-image:radial-gradient(ellipse at 50% -20%,rgba(240,154,62,.12),transparent 55%),radial-gradient(700px 400px at -10% 10%,rgba(80,120,200,.07),transparent);line-height:1.5;letter-spacing:.005em}.wrap{max-width:1220px;padding:30px 22px 56px}header{gap:16px;margin-bottom:22px;padding:6px 2px 18px;border-bottom:1px solid var(--line)}.logo{width:48px;height:48px;border-radius:15px;box-shadow:0 6px 22px rgba(77,163,255,.15)}h1{font-size:clamp(1.2rem,2.5vw,1.65rem);font-weight:800;letter-spacing:.045em;line-height:1.2}.sub{margin-top:6px;font-size:.88rem;max-width:650px}.notice{border-radius:12px;padding:12px 15px;margin:0 0 22px;background:rgba(77,163,255,.055);border-color:rgba(77,163,255,.24);font-size:.84rem}.grid{grid-template-columns:minmax(285px,.78fr) minmax(0,1.7fr);gap:18px}.panel{padding:20px;border-radius:16px;margin-bottom:18px;box-shadow:0 5px 20px rgba(0,0,0,.09);transition:border-color .18s,transform .18s}.panel h2{font-size:.72rem;letter-spacing:.105em;margin-bottom:16px;color:var(--muted)}.cards{grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px;margin-bottom:18px}.card{padding:15px 16px;border-radius:14px;box-shadow:none;background:var(--panel);border-color:var(--line)}.card:before{height:2px;opacity:.8}.card .v{font-size:clamp(1.25rem,2.5vw,1.65rem);letter-spacing:-.035em}.card .k{margin-top:5px;font-size:.65rem;letter-spacing:.09em}.timer{padding:15px;border-radius:13px;background:var(--panel2);border-color:var(--line)}.timer .t{font-size:clamp(1.2rem,2vw,1.55rem);letter-spacing:-.03em}.timer .l{font-size:.66rem;letter-spacing:.12em}.btn{min-height:40px;padding:10px 16px;box-shadow:0 2px 7px rgba(0,0,0,.08);transition:filter .15s,transform .15s,box-shadow .15s}.btn:hover{filter:brightness(1.06);transform:translateY(-1px);box-shadow:0 5px 13px rgba(0,0,0,.13)}.btn:active{transform:translateY(0)}.btn.ghost{box-shadow:none;background:transparent}.btn.sm{min-height:32px}input[type=text],input[type=number],select,textarea{border-radius:10px;transition:border-color .15s,box-shadow .15s}input[type=text],input[type=number],select{min-height:42px;margin-bottom:14px}input:focus,select:focus,textarea:focus{outline:none;box-shadow:0 0 0 3px rgba(77,163,255,.13);border-color:var(--accent)}label{font-size:.76rem;font-weight:600;margin-bottom:6px}.chk{font-weight:500}.bar{height:12px;border:1px solid var(--line);background:var(--input);border-radius:999px;overflow:hidden}.bar>div{background:linear-gradient(90deg,#f5a85a,#e8892b);box-shadow:0 0 12px rgba(240,154,62,.24);border-radius:999px;transition:width .45s cubic-bezier(.22,.8,.25,1)}.est{gap:9px}.est div{padding:12px 13px;border-radius:11px;background:var(--panel2);border-color:transparent}.est b{font-size:1.05rem;margin-top:4px}.est span{font-size:.64rem;letter-spacing:.07em}.vlist{max-height:300px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--line) transparent;border-radius:12px;border-color:var(--line);box-shadow:0 12px 28px rgba(0,0,0,.22);animation:list-in .16s ease-out}.vi{padding:10px 12px;transition:background .16s ease,transform .16s ease;will-change:background}.vi:hover{background:rgba(240,154,62,.09)}.vi:active{background:rgba(240,154,62,.18)}.vi:last-child{border-bottom:0}.vi.on{box-shadow:inset 3px 0 var(--accent);background:rgba(240,154,62,.14)}.vi-n b{font-size:.88rem}.vi-c{font-size:.8rem}details{border-top:1px solid var(--line);padding-top:12px;margin-top:14px}summary{font-size:.84rem;list-style:none;display:flex;align-items:center;gap:8px;margin-bottom:10px}summary::-webkit-details-marker{display:none}summary:before{content:'+';display:inline-grid;place-items:center;width:21px;height:21px;border-radius:7px;background:var(--panel2);color:var(--accent);font-size:1rem}details[open]>summary:before{content:'−'}table{font-size:.84rem;min-width:520px}th{font-size:.66rem;letter-spacing:.09em;padding:10px;border-bottom-color:var(--line)}td{padding:11px 10px}tbody tr:hover{background:rgba(142,154,168,.055)}.foot{font-size:.74rem;line-height:1.55}.api-status{border-radius:11px}:focus-visible{outline:2px solid var(--accent);outline-offset:3px}@media(max-width:880px){.wrap{padding:20px 14px 36px}.grid{grid-template-columns:1fr;gap:0}.grid>div{min-width:0}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.panel{padding:17px}}@media(max-width:480px){.wrap{padding:14px 10px 28px}header{align-items:flex-start;gap:11px;padding-bottom:15px}.logo{width:40px;height:40px;border-radius:12px}.logo svg{width:22px;height:22px}h1{font-size:1.08rem}.sub{font-size:.78rem}.notice{font-size:.78rem;padding:10px 11px}.panel{padding:14px;border-radius:13px}.cards{gap:8px}.card{padding:12px}.card .v{font-size:1.28rem}.timers{gap:8px}.timer{padding:11px}.timer .btn{font-size:.8rem;padding:8px 5px}.row2{gap:7px}.est{grid-template-columns:1fr 1fr}.est div:last-child{grid-column:1/-1}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;scroll-behavior:auto!important}}@keyframes list-in{from{opacity:.65;transform:translateY(-3px)}to{opacity:1;transform:translateY(0)}}.vlist::-webkit-scrollbar{width:8px}.vlist::-webkit-scrollbar-thumb{background:var(--line);border-radius:99px}.vlist::-webkit-scrollbar-thumb:hover{background:var(--accent)}#vSearch{margin-bottom:8px}#vSearch:focus{box-shadow:0 0 0 3px rgba(240,154,62,.16);border-color:var(--accent)}.goal-progress{margin:14px 0 20px}.goal-progress .bar{height:12px}.goal-progress .ptext{margin:8px 0 0}.bar{height:12px;background:var(--input);border-radius:999px;overflow:hidden;border:1px solid var(--line)}.bar>div{height:100%;width:0;background:linear-gradient(90deg,#70b7ff,#3b82f6);border-radius:999px;transition:width .4s}.ptext{font-size:.9rem;margin:8px 0 14px;color:var(--muted)}.est{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:16px}.est div{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px 12px}.est b{display:block;font-size:1.05rem}.est span{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}.vlist{max-height:260px;overflow-y:auto;border:1px solid var(--line);border-radius:12px;margin:6px 0;background:var(--input);box-shadow:0 12px 28px rgba(0,0,0,.24)}.vi{display:flex;gap:10px;align-items:center;padding:8px 12px;cursor:pointer;border-bottom:1px solid var(--line);transition:background .16s ease}.vi:hover{background:var(--panel2)}.vi.on{background:rgba(77,163,255,.14);box-shadow:none}.vi-n b{display:block;font-size:.92rem}.vi-c{font-variant-numeric:tabular-nums;font-size:.85rem;color:var(--accent);font-weight:600}#vSearch:focus{box-shadow:0 0 0 3px rgba(77,163,255,.13);border-color:var(--accent)}.tabs{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 18px;padding:6px;background:var(--panel);border:1px solid var(--line);border-radius:14px;width:fit-content;max-width:100%}.tab-btn{border:1px solid transparent;background:transparent;color:var(--muted);padding:10px 16px;border-radius:999px;font:inherit;font-size:.88rem;cursor:pointer}.tab-btn.active{background:linear-gradient(135deg,#f5a85a,#e8892b);color:#241608;font-weight:750}.tab-page{display:none}.tab-page.active{display:block}.dash-hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(220px,.85fr);gap:16px;padding:24px;border-radius:18px;background:linear-gradient(115deg,#12345b,#1767a8 42%,#1a1715 100%);border:1px solid rgba(77,163,255,.2);margin-bottom:18px}.dash-hero h2{font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.04em;color:white;text-transform:none;margin:0 0 8px}.dash-hero p{color:#d7eaff;margin:0;max-width:520px}.hero-metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-content:center}.hero-metric{padding:15px;background:rgba(20,18,17,.62);border:1px solid rgba(255,255,255,.14);border-radius:13px;color:white}.hero-metric span{display:block;color:#c5ddf5;font-size:.72rem}.hero-metric strong{display:block;font-size:clamp(1.2rem,2.4vw,1.65rem);margin-top:5px;font-variant-numeric:tabular-nums}.dash-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,.9fr);gap:16px;align-items:stretch}.dash-panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:16px;min-width:0}.dash-title{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:14px}.dash-title h3{font-size:.92rem;margin:0;font-weight:700}.dash-title span{font-size:.75rem;color:var(--muted)}.chart{height:220px;display:flex;align-items:stretch;gap:10px;padding:8px 4px 0;border-bottom:1px solid var(--line)}.chart-col{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:8px}.chart-value{font-size:.7rem;color:var(--muted);min-height:1em}.chart-bar-wrap{height:150px;width:100%;display:flex;align-items:flex-end;justify-content:center}.chart-bar{width:min(42px,78%);min-height:3px;border-radius:7px 7px 3px 3px;background:#d6d8dc;transition:height .3s}.chart-bar.today{background:#3b82f6}.chart-label{font-size:.7rem;color:var(--muted);padding-bottom:8px}.donut-row{display:flex;align-items:center;gap:20px;min-height:170px}.donut{width:132px;height:132px;flex:none;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#3b82f6 var(--pct,0%),var(--panel2) 0)}.donut:before{content:'';width:98px;height:98px;background:var(--panel);border-radius:50%;grid-area:1/1}.donut-inner{grid-area:1/1;z-index:1;text-align:center}.donut-inner strong{display:block;font-size:1.1rem}.donut-inner span{font-size:.68rem;color:var(--muted)}.legend{display:grid;gap:10px;font-size:.8rem;color:var(--muted)}.legend b{color:var(--text)}.profilebar{display:flex;align-items:center;gap:8px;margin-left:auto}.profilebar select{margin:0;min-width:130px;width:auto}.small-muted{font-size:.76rem;color:var(--muted)}.dash-empty{color:var(--muted);font-size:.86rem;padding:24px 8px;text-align:center}@media(max-width:760px){.dash-hero,.dash-grid{grid-template-columns:1fr}.hero-metrics{grid-template-columns:1fr 1fr}.tabs{width:100%}.tab-btn{flex:1;padding:9px 8px}.profilebar{width:100%;margin:4px 0 0}.profilebar select{flex:1}}:root{--bg:#090c10;--panel:#141a22;--panel2:#1c2530;--input:#0b1118;--line:#303b49;--accent:#4da3ff;--text:#f5f7fa;--muted:#a3afbd;--ok:#4adea5;--bad:#ff7b86}:root[data-theme="light"]{--bg:#eef1f5;--panel:#fff;--panel2:#f3f6f9;--input:#f8fafc;--line:#d5dde6;--accent:#2563eb;--text:#17212c;--muted:#526273;--ok:#087a52;--bad:#c62d42}body{font-size:15px}.wrap{max-width:1320px}header{margin-bottom:18px}.logo{width:54px;height:54px}h1{font-size:clamp(1.35rem,2.4vw,1.9rem)}.sub{font-size:.95rem;color:var(--muted)}.tabs{position:sticky;top:8px;z-index:20;box-shadow:0 8px 24px rgba(0,0,0,.18);backdrop-filter:blur(12px)}.tab-btn{font-weight:650;min-height:42px}.tab-btn.active{box-shadow:0 3px 12px rgba(77,163,255,.22)}.panel{border-color:color-mix(in srgb,var(--line) 85%,var(--accent));}.panel h2{font-size:.78rem;color:var(--text);letter-spacing:.09em;padding-bottom:10px;border-bottom:1px solid var(--line)}.cards{gap:12px}.card{min-height:102px;display:flex;flex-direction:column;justify-content:center;border-left:3px solid var(--accent)}.card .v{font-size:clamp(1.45rem,2.6vw,1.9rem);line-height:1.2;color:var(--text)}.card .k{font-size:.72rem;color:var(--muted);line-height:1.4}.timer .t{font-size:clamp(1.4rem,2.2vw,1.8rem);color:#8cc8ff}label{font-size:.8rem;color:var(--text)}input[type=text],input[type=number],select,textarea{font-size:.95rem}.btn{font-size:.9rem}.notice{color:var(--text);border-left:4px solid var(--accent)}.vimg{width:112px;height:74px;border-radius:13px;background:linear-gradient(145deg,var(--panel2),var(--input))}.vname{font-size:1.35rem;line-height:1.25}.vmeta{font-size:.88rem;line-height:1.6}.ptext{font-size:.98rem;color:var(--text);line-height:1.55}.bar{height:14px}.est div{padding:14px}.est b{font-size:1.15rem}.est span{font-size:.7rem}.api-status{font-size:.88rem;line-height:1.5}.dash-hero{padding:clamp(22px,3vw,34px);min-height:220px;background:linear-gradient(115deg,#12345b,#1767a8 43%,#1c2027 100%)}.dash-hero h2{font-size:clamp(1.7rem,3.2vw,2.4rem);line-height:1.12}.dash-hero p{font-size:.98rem;line-height:1.65}.hero-metric{padding:17px;border-color:rgba(255,255,255,.2)}.hero-metric span{font-size:.78rem;color:#d7eaff}.hero-metric strong{font-size:clamp(1.4rem,2.5vw,1.9rem);line-height:1.2}.dash-panel{padding:20px}.dash-title h3{font-size:1rem}.chart{height:245px}.chart-bar-wrap{height:170px}.chart-label,.chart-value{font-size:.76rem}table{font-size:.9rem}th{font-size:.72rem;color:var(--text)}td{padding:12px 10px}.vlist{z-index:30;position:relative;box-shadow:0 14px 34px rgba(0,0,0,.32)}.vi{min-height:54px}.vi-n b{font-size:.94rem}.vi-n small{font-size:.78rem}:focus-visible{outline:3px solid var(--accent);outline-offset:3px}@media(max-width:520px){.card{min-height:90px}.vimg{width:84px;height:60px}.dash-panel{padding:14px}.dash-hero{padding:18px}.hero-metric{padding:12px}}.tree-list{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:14px;max-height:800px;overflow:auto;padding:14px;align-items:start;background:radial-gradient(ellipse at top left,rgba(77,163,255,.08),transparent 55%),linear-gradient(180deg,rgba(255,255,255,.025),transparent);border:1px solid var(--line);border-radius:14px}.tree-main{display:flex;flex-direction:column;gap:18px;min-width:0}.tree-premium{position:sticky;top:0;display:flex;flex-direction:column;gap:9px;padding:12px;border:1px solid rgba(77,163,255,.42);border-radius:12px;background:linear-gradient(160deg,rgba(77,163,255,.13),var(--panel) 60%);box-shadow:0 8px 22px rgba(0,0,0,.15)}.tree-premium-title{font-size:.8rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);padding-bottom:9px;border-bottom:1px solid rgba(77,163,255,.3)}.tree-premium .tree-item{max-width:none;min-height:68px;flex:0 0 auto;border-color:rgba(77,163,255,.3);background:rgba(0,0,0,.12)}.tree-premium .tree-item:after{display:none}.tree-premium .tree-cost{color:var(--accent)}.tree-rank{width:100%;min-width:0;display:flex;flex-direction:row;flex-wrap:wrap;gap:10px;position:relative;padding:0 0 16px}.tree-rank{width:100%;min-width:0;display:flex;flex-direction:row;flex-wrap:wrap;gap:10px;position:relative;padding:0 0 16px}.tree-rank:not(:last-child):after{content:"";position:absolute;left:20px;right:20px;bottom:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--line));opacity:.55}.tree-rank-title{flex:0 0 100%;position:sticky;top:0;z-index:2;background:var(--panel);border:1px solid var(--line);border-bottom:2px solid var(--accent);border-radius:8px;padding:8px 10px;color:var(--accent);font-size:.76rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.tree-item{display:flex;align-items:center;gap:9px;padding:11px;background:linear-gradient(135deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:10px;min-height:82px;position:relative;box-shadow:0 4px 12px rgba(0,0,0,.14);flex:1 1 230px;max-width:360px;transition:transform .15s,border-color .15s,box-shadow .15s}.tree-item:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 8px 18px rgba(0,0,0,.22)}.tree-item:has(input:checked):after{border-color:var(--ok)}.tree-item:after{content:"";position:absolute;left:50%;bottom:-11px;height:10px;border-left:1px solid var(--accent);opacity:.5}.tree-item:has(input:checked){border-color:var(--ok);background:linear-gradient(135deg,rgba(52,211,153,.16),var(--panel));box-shadow:inset 3px 0 var(--ok)}.tree-list{max-height:900px;scroll-behavior:smooth}.tree-rank{padding:4px 0 20px}.tree-rank-title{display:flex;align-items:center;gap:8px;background:linear-gradient(90deg,var(--panel2),var(--panel));box-shadow:0 4px 12px rgba(0,0,0,.16)}.tree-rank-title:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)}.tree-item{min-height:94px;flex-basis:245px;border-left:3px solid var(--line)}.tree-item:has(input:checked){border-left-color:var(--ok)}.tree-premium{max-height:880px;overflow:auto}.tree-premium .tree-item{border-left:3px solid #4da3ff}.tree-premium .tree-item:has(input:checked){border-left-color:var(--ok)}.target-search{position:relative}.target-search input{font-size:1rem;padding:13px 14px;border:1px solid rgba(77,163,255,.5);box-shadow:0 0 0 3px rgba(77,163,255,.07)}.target-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;margin:6px 0 14px;max-height:340px;overflow:auto}.target-option{display:flex;align-items:center;gap:10px;text-align:left;width:100%;padding:11px 12px;background:var(--panel2);border:1px solid var(--line);border-radius:10px;color:var(--text);cursor:pointer;font:inherit;transition:transform .12s,border-color .12s}.target-option:hover,.target-option:focus{border-color:var(--accent);transform:translateY(-1px)}.target-option.active{border-color:var(--ok);box-shadow:inset 3px 0 var(--ok);background:rgba(52,211,153,.09)}.target-option b{display:block;font-size:.86rem}.target-option small{display:block;color:var(--muted);font-size:.73rem;margin-top:3px}.target-empty{grid-column:1/-1;color:var(--muted);padding:12px;border:1px dashed var(--line);border-radius:10px}@media(max-width:760px){.tree-list{grid-template-columns:1fr}.tree-premium{max-height:none}.tree-item{flex-basis:100%;max-width:none}}.tree-item input{width:18px;height:18px;accent-color:var(--ok);flex-shrink:0}.tree-item span{flex:1;min-width:0}.tree-item b{display:block;font-size:.84rem;line-height:1.3}.tree-item small{display:block;color:var(--muted);font-size:.72rem;margin-top:4px}.tree-item .tree-cost{font-size:.72rem;white-space:nowrap;color:var(--accent);font-weight:700;flex:0 0 auto}.tree-summary{padding:14px;margin-top:14px;background:rgba(77,163,255,.09);border:1px solid rgba(77,163,255,.3);border-radius:12px;line-height:1.7}.tree-path{display:grid;gap:7px;margin-top:12px}.tree-step{display:flex;gap:10px;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:9px}.tree-step .stepnum{width:27px;height:27px;display:grid;place-items:center;border-radius:50%;background:rgba(77,163,255,.15);color:var(--accent);font-weight:800;flex-shrink:0}.tree-step .stepbody{flex:1}.tree-step small{display:block;color:var(--muted);margin-top:2px}.tree-step .stepcost{font-weight:700;white-space:nowrap}@media(max-width:760px){.tree-list{grid-template-columns:1fr}.tree-premium{position:static;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));align-items:stretch}.tree-premium-title{grid-column:1/-1}}@media(max-width:560px){.tree-item{padding:9px}.tree-step{align-items:flex-start}}:root{--accent:#4da3ff}html{scroll-behavior:smooth}body{background-attachment:fixed}.panel,.dash-panel,.card,.timer,.est div,.vimg,.vi,.tab-btn,.btn{will-change:auto}.panel,.dash-panel{transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}@media(hover:hover){.panel:hover,.dash-panel:hover{border-color:color-mix(in srgb,var(--accent) 42%,var(--line));box-shadow:0 12px 28px rgba(0,0,0,.14)}.card{transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}.card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 58%,var(--line));box-shadow:0 9px 22px rgba(0,0,0,.18)}.timer:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}.tab-btn{transition:background .18s ease,color .18s ease,transform .18s ease}.tab-btn:hover{color:var(--text);background:rgba(77,163,255,.09)}.btn{transition:transform .16s ease,filter .16s ease,box-shadow .16s ease}.btn:hover{transform:translateY(-1px);box-shadow:0 5px 15px rgba(77,163,255,.2)}.vi{transition:background .14s ease,transform .14s ease}.vi:hover{transform:translateX(2px)}}.btn:active,.tab-btn:active{transform:scale(.98)}input,select,textarea{transition:border-color .18s ease,box-shadow .18s ease,background .18s ease}input:focus,select:focus,textarea:focus{box-shadow:0 0 0 4px rgba(77,163,255,.11)}.bar>div{background:linear-gradient(90deg,#3b82f6,#60a5fa,#a5d8ff);background-size:180% 100%;animation:barShimmer 5s ease-in-out infinite alternate}@keyframes barShimmer{from{background-position:0% 50%}to{background-position:100% 50%}}.vimg{position:relative;isolation:isolate;background:radial-gradient(ellipse at center,rgba(77,163,255,.09),transparent 70%),linear-gradient(145deg,var(--panel2),var(--input));padding:5px}.vimg img{width:100%;height:100%;object-fit:contain;object-position:center center;display:block;image-rendering:auto;filter:drop-shadow(0 2px 3px rgba(0,0,0,.2))}.vi-i{padding:2px;background:radial-gradient(ellipse at center,rgba(77,163,255,.07),transparent 75%),var(--panel2)}.vi-i img{object-fit:contain;object-position:center center;padding:2px;display:block}img{max-width:100%}::-webkit-scrollbar{width:10px;height:10px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--line);border:2px solid var(--bg);border-radius:99px}::-webkit-scrollbar-thumb:hover{background:var(--muted)}::selection{background:rgba(77,163,255,.28);color:var(--text)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}:root{--accent:#4da3ff}:root[data-theme="light"]{--accent:#2563eb}body{background-image:radial-gradient(ellipse at 50% -20%,rgba(77,163,255,.12),transparent 58%),radial-gradient(700px 360px at 100% 15%,rgba(37,99,235,.055),transparent);background-attachment:fixed}.panel,.card,.dash-panel,.timer,.est div,.vlist,.vi,.tab-btn,.btn,select,input,textarea,.target-option,.tree-item{transition:background-color .18s ease,border-color .18s ease,box-shadow .18s ease,transform .18s ease,color .18s ease}.panel:hover{border-color:color-mix(in srgb,var(--line) 65%,var(--accent))}.tab-btn.active{background:linear-gradient(135deg,#60b4ff,#2879e8);color:#071525;box-shadow:0 4px 14px rgba(77,163,255,.24)}.dash-hero{background:linear-gradient(115deg,#102b4b,#155a91 43%,#141d2a 100%);border-color:rgba(77,163,255,.25)}.dash-hero p{color:#d7eaff}.hero-metric{background:rgba(5,18,34,.52)}.hero-metric span{color:#c5ddf5}.chart-bar.today{background:#4da3ff}.donut{background:conic-gradient(#4da3ff var(--pct,0%),var(--panel2) 0)}.bar>div{display:block;height:100%;width:0;min-width:0;background:linear-gradient(90deg,#2879e8,#8cc8ff);box-shadow:0 0 12px rgba(77,163,255,.28);transition:width .45s cubic-bezier(.22,.8,.25,1);will-change:width}.timer .t{color:var(--accent)}.logo{background:linear-gradient(135deg,#70b7ff,#2563eb);color:#071525;box-shadow:0 6px 22px rgba(77,163,255,.18)}.notice{background:rgba(77,163,255,.055);border-color:rgba(77,163,255,.24)}input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px rgba(77,163,255,.14)}.vi.on{background:rgba(77,163,255,.10)}.tree-list{background:radial-gradient(ellipse at top left,rgba(77,163,255,.09),transparent 55%),linear-gradient(180deg,rgba(255,255,255,.025),transparent)}.tree-premium{border-color:rgba(245,190,75,.42);background:linear-gradient(160deg,rgba(245,190,75,.10),var(--panel) 60%)}.tree-premium-title{color:#f5be4b;border-bottom-color:rgba(245,190,75,.3)}.tree-premium .tree-item{border-color:rgba(245,190,75,.3)}.tree-premium .tree-cost{color:#f5be4b}.tree-premium .tree-item{border-left-color:#f5be4b}@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}.goal-progress{margin:0 0 18px;padding:12px 14px;background:var(--panel2);border:1px solid var(--line);border-radius:12px}.goal-progress-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px;font-size:.86rem}.goal-progress-head strong{color:var(--text)}.goal-progress-head span{color:var(--accent);font-weight:800;font-variant-numeric:tabular-nums}.goal-progress .bar{height:14px}.goal-progress .ptext{margin:8px 0 0;font-size:.84rem}.goal-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:12px}.goal-metrics>div{padding:10px;background:var(--panel);border:1px solid var(--line);border-radius:10px;min-width:0}.goal-metrics span{display:block;font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}.goal-metrics strong{display:block;margin-top:4px;font-size:clamp(1rem,2vw,1.25rem);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.goal-metrics>div:last-child strong{color:var(--accent)}@media(max-width:520px){.goal-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}</style>
+</head><body><div class="wrap"><header><div class="logo"><svg width="26" height="26" viewBox="0 0 48 48" fill="currentColor"><path d="M24 3l5 13 14 1-11 9 4 14-12-8-12 8 4-14L5 17l14-1z"/></svg></div><div><h1>WAR THUNDER <span>RP TRACKER</span></h1><p class="sub">Sessions, parties, RP et progression vers votre prochain véhicule</p></div></header><nav class="tabs" aria-label="Navigation principale"><button class="tab-btn active" type="button" data-tab="tracker">◈ Tracker</button><button class="tab-btn" type="button" data-tab="dashboard">▥ Récapitulatif</button><button class="tab-btn" type="button" data-tab="leaderboard">🏆 Classement RP/h</button><div class="profilebar"><span class="small-muted">Profil local</span><select id="profileSelect" aria-label="Profil local"></select><button class="btn ghost sm" id="newProfileBtn" type="button">+ Profil</button></div></nav><div id="profileMsg" class="small-muted" style="margin:-8px 0 14px 4px">Les profils et statistiques restent sur cet appareil, dans ce navigateur.</div><div class="notice"><span>⚠</span><span>Les gains RP et Silver Lions se saisissent après chaque bataille. Les RP déjà acquis se renseignent dans le champ dédié ; chaque nouvelle partie enregistrée fait ensuite avancer automatiquement l’objectif sélectionné. Les chronomètres se lancent aussi à la main.</span></div><section id="leaderboard" class="tab-page" aria-label="Classement des véhicules par rendement RP par heure"><div class="dash-hero"><div><h2>Les véhicules les plus rentables</h2><p>Classement basé sur tes parties enregistrées. Le RP/h est calculé uniquement avec les parties dont la durée est renseignée.</p></div><div class="hero-metrics"><div class="hero-metric"><span>Véhicules classés</span><strong id="lbCount">0</strong></div><div class="hero-metric"><span>Meilleur RP/h</span><strong id="lbBest">—</strong></div></div></div><div class="dash-panel"><div class="dash-title"><h3>Classement RP par heure</h3><span>Du meilleur au moins rentable</span></div><div class="scroll"><table style="min-width:560px"><thead><tr><th>#</th><th>Véhicule</th><th>Parties chronométrées</th><th>RP total</th><th>RP/h</th></tr></thead><tbody id="leaderRows"></tbody></table></div><div class="dash-empty" id="leaderEmpty">Enregistre des parties avec le véhicule utilisé et leur durée pour construire ton classement.</div></div></section><section id="dashboard" class="tab-page" aria-label="Récapitulatif et suivi quotidien"><div class="dash-hero"><div><h2>Votre progression, jour après jour.</h2><p>Un aperçu rapide de vos sessions, de vos gains et de votre rythme de recherche. Les graphiques se mettent à jour à chaque partie enregistrée.</p></div><div class="hero-metrics"><div class="hero-metric"><span>RP aujourd'hui</span><strong id="dTodayRp">0</strong></div><div class="hero-metric"><span>Temps aujourd'hui</span><strong id="dTodayTime">0 min</strong></div><div class="hero-metric"><span>RP cette semaine</span><strong id="dWeekRp">0</strong></div><div class="hero-metric"><span>Parties cette semaine</span><strong id="dWeekGames">0</strong></div></div></div><div class="dash-grid"><div><div class="dash-panel"><div class="dash-title"><h3>RP gagnés par jour</h3><span>7 derniers jours</span></div><div class="chart" id="dailyChart"></div></div><div class="dash-panel"><div class="dash-title"><h3>Historique quotidien</h3><span>RP · SL · parties</span></div><div class="scroll"><table style="min-width:440px"><thead><tr><th>Jour</th><th>Parties</th><th>RP</th><th>SL nets</th><th>Temps</th></tr></thead><tbody id="dailyRows"></tbody></table></div><div class="dash-empty" id="dailyEmpty" style="display:none">Ajoutez vos premières parties pour voir apparaître le suivi quotidien.</div></div></div><div><div class="dash-panel"><div class="dash-title"><h3>Répartition des résultats</h3><span>Toutes les parties</span></div><div class="donut-row"><div class="donut" id="winDonut"><div class="donut-inner"><strong id="dWinRate">—</strong><span>victoires</span></div></div><div class="legend"><div><b id="dWins">0</b> victoires</div><div><b id="dLosses">0</b> défaites</div><div><b id="dAvgRp">—</b> RP / partie</div><div><b id="dRph">—</b> RP / heure</div></div></div></div><div class="dash-panel"><div class="dash-title"><h3>Résumé global</h3><span>Depuis le début</span></div><div class="est"><div><span>Total Silver Lions</span><b id="dTotalSl">0</b></div><div><span>Temps enregistré</span><b id="dTotalTime">0 h</b></div><div><span>Meilleure journée</span><b id="dBestDay">—</b></div></div><p class="foot">Le suivi quotidien se base sur les dates et durées saisies dans l'historique. Pour des statistiques fiables, renseignez la durée de chaque partie.</p></div></div></div></section><section id="tracker" class="tab-page active" aria-label="Tracker principal"><div class="grid"><div><div class="panel"><h2>Chronomètres</h2><div class="timers"><div class="timer"><div class="l">Session</div><div class="t" id="sTime">00:00:00</div><button class="btn ghost" id="sBtn">Démarrer</button></div><div class="timer"><div class="l">Partie</div><div class="t" id="gTime">00:00:00</div><button class="btn" id="gBtn">Début de partie</button></div></div><p class="foot">« Fin de partie » pré-remplit la durée du formulaire. Lancer une partie démarre la session si besoin.</p></div><div class="panel"><h2>Saisie d'une partie</h2><form id="form" autocomplete="off"><label for="playVeh">Véhicule joué actuellement (mémorisé jusqu’à ce que tu le changes)</label><input type="text" id="playVeh" list="playVehOptions" placeholder="Choisis ou saisis un véhicule…" maxlength="100" autocomplete="off"><datalist id="playVehOptions"></datalist><p class="foot" style="margin:4px 0 10px">Le véhicule sélectionné sera repris automatiquement pour chaque nouvelle partie.</p><input type="hidden" id="fVeh" maxlength="100"><div class="row2"><div><label for="fRp">RP gagnés</label><input type="number" id="fRp" min="0" step="1" inputmode="numeric"></div><div><label for="fSl">Silver Lions (net)</label><input type="number" id="fSl" step="1" inputmode="numeric"></div></div><label for="fMin">Durée (minutes, optionnel)</label><input type="number" id="fMin" min="0" step="1" inputmode="numeric"><label class="chk"><input type="checkbox" id="fWon" checked> Victoire</label><button class="btn" type="submit">Ajouter la partie</button><div class="err" id="err"></div></form></div></div><div><div class="cards"><div class="card"><div class="v" id="cN">0</div><div class="k">Parties</div></div><div class="card"><div class="v" id="cRp">0</div><div class="k">RP total</div></div><div class="card"><div class="v" id="cAvg">—</div><div class="k">RP moy. / partie</div></div><div class="card"><div class="v" id="cRph">—</div><div class="k">RP / heure</div></div><div class="card"><div class="v" id="cSl">0</div><div class="k">Silver Lions</div></div><div class="card"><div class="v" id="cWr">—</div><div class="k">Victoires</div></div><div class="card"><div class="v" id="cTime">00:00</div><div class="k">Temps de session</div></div></div><div class="panel"><h2>Objectif véhicule</h2><div class="veh"><div class="vimg" id="vImg"></div><div><div class="vname" id="vName">Aucun véhicule choisi</div><div class="vmeta" id="vMeta">Choisissez un véhicule ci-dessous.</div></div></div><div class="goal-progress"><div class="goal-progress-head"><strong>Progression du déblocage</strong><span id="pPct">0 %</span></div><div class="bar" role="progressbar" aria-label="Progression vers le véhicule" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="pBar"></div></div><div class="goal-metrics"><div><span>RP déjà acquis</span><strong id="pOwnedShown">0</strong></div><div><span>RP gagnés en parties</span><strong id="pEarnedShown">0</strong></div><div><span>Total RP obtenus</span><strong id="pTotalShown">0</strong></div><div><span>RP restants</span><strong id="pRemainingShown">—</strong></div></div><div class="ptext" id="pText">Choisissez un véhicule dans le catalogue pour suivre votre progression.</div></div><label for="vSearch">Rechercher (nom, nation, type, rang, BR)</label><input type="text" id="vSearch" placeholder="Ex. tiger, Allemagne, avion, rang VII, 6.7" autocomplete="off"><div class="api-status" id="localStatus"><strong>Catalogue :</strong> chargement des véhicules depuis War Thunder Vehicles API…</div><button class="btn ghost sm" id="apiRetry" type="button" style="margin:8px 0 12px">Actualiser le catalogue</button><div id="vList" class="vlist"></div><p class="foot" style="margin:0 0 14px"></p><div class="est"><div><span>Temps de jeu restant</span><b id="eTime">—</b></div><div><span>Parties restantes</span><b id="eGames">—</b></div><div><span>Déblocage estimé</span><b id="eDate">—</b></div></div><div class="row2"><div><label for="pTarget">Coût de recherche (RP)</label><input type="number" id="pTarget" min="0" step="1" readonly aria-readonly="true" title="Coût fourni par le catalogue"></div><div><label for="pOwned">RP déjà acquis sur ce véhicule</label><input type="number" id="pOwned" min="0" step="1"></div></div><p class="foot">Le coût est repris automatiquement depuis les données du catalogue et ne peut pas être modifié ici. L’estimation suppose que vous gardez le rythme actuel (RP/heure et temps de session).</p></div><div class="panel"><h2>Historique</h2><div class="scroll"><table><thead><tr><th>Date</th><th>Véhicule</th><th>Résultat</th><th>RP</th><th>SL</th><th>Durée</th><th></th></tr></thead><tbody id="rows"></tbody></table></div><div id="empty" class="empty">Aucune partie enregistrée.</div><div style="margin-top:12px"><button class="btn ghost sm" id="clear">Effacer tout l'historique</button></div><p class="foot">Les données sont conservées dans ce navigateur (stockage local). Vider les données du site les supprime.</p></div></div></div></section></div>
+
+<script>
+(function(){
+  var KEY='wtrp.v1';
+  var $=function(id){return document.getElementById(id)};
+  var PROFILE_KEY='wtrp.local.profiles.v1', activeProfile='default';
+  function getProfiles(){try{return JSON.parse(localStorage.getItem(PROFILE_KEY)||'{\"default\":\"Profil principal\"}')}catch(e){return {default:'Profil principal'}}}
+  function setProfiles(p){try{localStorage.setItem(PROFILE_KEY,JSON.stringify(p))}catch(e){}}
+  function profileStorageKey(name){return 'wtrp.profile.'+name.toLowerCase().replace(/[^a-z0-9_-]+/g,'_')}
+  function refreshProfileSelect(){var p=getProfiles(),sel=$('profileSelect');if(!sel)return;sel.innerHTML=Object.keys(p).map(function(k){return '<option value=\"'+esc(k)+'\">'+esc(p[k])+'</option>'}).join('');sel.value=activeProfile;}
+  function switchProfile(name){if(!name||name===activeProfile)return;save();activeProfile=name;KEY=profileStorageKey(name);var stored=null;try{stored=JSON.parse(localStorage.getItem(KEY)||'null')}catch(e){};S=Object.assign({},D,stored||{});S.pOwnedByVehicle=S.pOwnedByVehicle||{};$('pTarget').value=S.pTarget||'';var selected=findV(S.sel);$('pOwned').value=selected&&Object.prototype.hasOwnProperty.call(S.pOwnedByVehicle,selected.id)?String(S.pOwnedByVehicle[selected.id]):(S.pOwned||'');$('fVeh').value=S.currentVeh||S.lastVeh||'';$('playVeh').value=S.currentVeh||S.lastVeh||'';renderSelect();renderRows();renderStats();renderButtons();tick();renderDashboard();$('profileMsg').textContent='Profil « '+(getProfiles()[name]||name)+' » actif. Données locales à ce navigateur.';}
+
+  // Catalogue de départ et coûts fournis par les données disponibles ; les coûts ne sont pas modifiables dans l’interface.
+  var DEFAULTS=[{id:'d-tiger-e',name:'Tiger E',nation:'Allemagne',cls:'tank',rp:40000,br:'6.0'}];
+  // Noms issus du wiki officiel (wiki.warthunder.com, chars : États-Unis complet, Allemagne jusqu'au rang VII partiel). Coûts non préchargés.
+  var WIKI=[['us','États-Unis','M2A4|M2|LVT(A)(1)|M13 MGMC|M2A2|M3 Stuart|M22|M15 CGMC|M8 HMC|M3A1 Stuart|M3 GMC|M2A4 (1st Arm.Div.)|LVT(A)(4)|M8 LAC|M3A1 (USMC)|M5A1|M3 Lee|M7|M16 MGMC|M4A3 (105)|M4A1|M4|M4A2|T77E1|M10 GMC|Stuart VI (5th CAD)|LVT(A)(4) (ZIS-2)|Grant I|M5A1 TD|LVT(A)(1) (M24)|M8A1 GMC|M4A5|T18E2|M24|M4A1 (76) W|M6A1|T1E1|M19A1|M42|M44|M55|M18 GMC|M4A2 (76) W|M4A3 (76) W|M4A3E2|M36 GMC|M36B2|T1E1 (90)|M24 (TL)|Calliope|T14|T55E1|Cobra King|T86|Sherman (Hell)|Hellcat (Hell)|Skink (Hell)|M18 "Black Cat"|M41A1|M4/T26|T25|M4A3E2 (76) W|Skink|M109A1|T92|M26|T26E5|T26E1-1|M56|M50|M46|T34|Super Hellcat|T28|T20|M551(76)|M26 T99|T30|M26E1|M6A2E1|M46 "Tiger"|T29|M551|M47|M48A1|T32|T32E1|M163|T95|M60|M103|M728 CEV|T114|T54E2|Magach 3 (ERA)|T54E1|T58|XM800T|M60A1 (AOS)|M60A1 RISE (P)|T95E1|XM246|M60A2|Stingray|M60A3 TTS|XM803|MBT-70|M247|Imp.Chaparral|M3 Bradley|M1296|M901|EFV|M60A1 Predator|Merkava Mk.1|XM1 (Chrysler)|Merkava Mk.2B|XM1 (GM)|XM8|M1128|120S|M1 Abrams|LAV-AD|M3A3 Bradley|M10 Booker|M1A1 HC|M1A1|IPM1|XM975|HSTV-L|M1A2 Abrams|M1128 Wolfpack|CCVL|M1 KVT|M60 AMBT|LOSAT|M1A1 SA|AGS|Merkava Mk.3D|M1A1 Click-Bait|RDF/LT|M1A2 SEP|M1A2 SEPv2|ADATS|M1A2 (Trophy-HV)|CLAWS (TADS)|CLAWS (TEL)|M1A2 SEPv3|NASAMS 3 (TADS)|NASAMS 3 (TEL)'],['de','Allemagne','Garford-Beute|Beutepanzer IV|A7V|Flakpanzer I|Flakpanzer 38|15cm sIG 33 B Sfl|Sd.Kfz.221 (s.Pz.B.41)|Pz.35(t)|Pz.III E|Pz.III B|Pz.IV C|Sd.Kfz.222|Panzerjäger I|Sd.Kfz.251/9|Pz.38(t) A|Pz.III F|Pz.II C|Pz.II F|Sd.Kfz. 6/2|Marder III|StuG III A|Pz.38(t) F|Pz.38(t) n.A.|Pz.III J|Pz.IV E|Pz.IV F1|Pz.II C TD|Sd.Kfz.251/10|Pz.II C (DAK)|Sd.Kfz.234/1|Nb.Fz.|Sd.Kfz.234/3|Sd.Kfz. 140/1|P204(f) KwK 38|P204(f) KwK 39/1|Pz.III J1|Pz.IV F2|Pz.IV G|Sd.Kfz.251/21|Marder III H|StuH 42 G|StuG III F|Sd.Kfz.234/2|Pz.III L|Pz.III M|Pz.IV H|Pz.IV J|Hummel|Dicker Max|Sturer Emil|M44|M55|15 cm Pz.W.42|Pz.Sfl.Ic|Pz.III J1 TD|Sd.Kfz.251/22|Pz.III N|Sd.Kfz.234/2 TD|Sd.Kfz.234/2 "Biene"|8,8 cm Flak 37 Sfl.|Tiger H1|VK 3002 (M)|Ostwind|Wirbelwind|StuG III G|Nashorn|Waffenträger|Panther D|Ostwind II|Jagdpanzer IV|Jagdpanzer 38(t)|Panzer IV/70(V)|KW II 754 (r)|M4 748 (a)|Pz.Bef.Wg.IV J|KV-IB|Pz.Kpfw. Churchill|Sd.Kfz.234/4|T 34 747 (r)|VK 45.01 (P)|Brummbär|VFW|Panzer IV/70(A)|Tiger Ost|Tiger West|Ostwind Ost|KW I C 756 (r)|Tiger|M109G|Tiger II (Nr.1-50)|Panther A|Panther G|Panther F|Zerstörer 45|Jagdpanther G1|JPz 4-5|leKPz M41|Tiger II|Kugelblitz|Ferdinand|Jagdtiger|Pz.Bef.Wg.VI P|Ersatz M10|38 cm Sturmmörser|Flakpanzer 341|Bfw. Jagdpanther G1|SPz 12-3 LGS|Elefant|Tiger II (Sla.16)|Panther II|Tiger II (10.5 cm Kw.K)|Ru 251|Marder 1A1|SPz BMP-1|M48A2 C|Leopard I|Wiesel 1A4|PzH 2000|Marder 1A3|DF105|Luchs A2|Raketenautomat|RakJPz 2|mKPz M47 G|E-100|CLOVIS|Maus|Turm III|TAM|JaPz.K A2|M48A2 G A2|Leopard A1A1|Leopard 1A5|Gepard|RakJPz 2 (HOT)|Begleitpanzer 57|KPz-70|M48 Super|Ozelot|Gepard 1A2|Jaguar 2|T-72M1|TAM 2IP|VT1-2|Leopard 1 MPI|Class 3 (P)|C2A1|R400|Radkampfwagen 90|TAM 2C|Leopard 2K']];
+  var WIKIV=[],seen={};
+  WIKI.forEach(function(g){g[2].split('|').forEach(function(nm){
+    var id='w-'+g[0]+'-'+nm.toLowerCase().replace(/[^a-z0-9]+/g,'-');
+    if(seen[id])return;seen[id]=1;
+    WIKIV.push({id:id,name:nm,nation:g[1],cls:'tank',rp:0});
+  });});
+  var D={entries:[],sessions:[],sessionStart:null,gameStart:null,lastVeh:'',currentVeh:'',vehicles:[],costs:{},sel:'',pTarget:'',pOwned:'',pOwnedByVehicle:{},goalRpBaseline:null};
+  function load(){try{return JSON.parse(localStorage.getItem(KEY))}catch(e){return null}}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+  var S=Object.assign({},D,load()||{});
+  S.pOwnedByVehicle=S.pOwnedByVehicle||{};
+  if(S.sel&&S.pOwned&&!Object.prototype.hasOwnProperty.call(S.pOwnedByVehicle,S.sel)){S.pOwnedByVehicle[S.sel]=String(S.pOwned);}
+  // Le profil principal reprend les anciennes données wtrp.v1 pour ne rien perdre.
+  try{var profs=getProfiles();if(!profs.default){profs.default='Profil principal';setProfiles(profs)}if(!localStorage.getItem(profileStorageKey('default'))&&localStorage.getItem('wtrp.v1'))localStorage.setItem(profileStorageKey('default'),localStorage.getItem('wtrp.v1'));}catch(e){}
+  activeProfile='default';KEY=profileStorageKey(activeProfile);try{S=Object.assign({},D,JSON.parse(localStorage.getItem(KEY)||'null')||load()||{});}catch(e){}
+  var nf=new Intl.NumberFormat('fr-FR',{maximumFractionDigits:0});
+  var pad=function(n){return String(n).padStart(2,'0')};
+  function hms(ms){var s=Math.max(0,Math.floor(ms/1000));return pad(Math.floor(s/3600))+':'+pad(Math.floor(s%3600/60))+':'+pad(s%60)}
+  function hm(ms){var m=Math.floor(ms/60000);return pad(Math.floor(m/60))+':'+pad(m%60)}
+  function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+  function sum(a,f){return a.reduce(function(t,x){return t+f(x)},0)}
+  var API_KEY='wtrp.api.catalog.v2', API_VEHICLES=[];
+  // Données de l'API embarquées dans le fichier (remplies par fetch_wt_vehicles.py --inject).
+  var EMBEDDED_RAW=[/*WT_EMBED*/];
+  try{var cachedApi=JSON.parse(localStorage.getItem(API_KEY)||'[]');if(Array.isArray(cachedApi))API_VEHICLES=cachedApi;}catch(e){}
+  try{if(EMBEDDED_RAW.length>API_VEHICLES.length){var emb=[],seenE={};EMBEDDED_RAW.forEach(function(x){var v=apiVehicle(x);if(v&&!seenE[v.id]){seenE[v.id]=1;emb.push(v)}});if(emb.length>API_VEHICLES.length)API_VEHICLES=emb;}}catch(e){}
+  // Fusion du catalogue en un seul passage (évite les recherches répétées parmi les doublons).
+  function catalog(){
+    var all=(API_VEHICLES.length?API_VEHICLES.concat(S.vehicles):DEFAULTS.concat(WIKIV,S.vehicles)),out=[],byKey=Object.create(null);
+    all.forEach(function(v){
+      if(!v||!v.name)return;
+      var k=norm(v.name+'|'+v.nation),old=byKey[k];
+      if(!old){byKey[k]=v;out.push(v);return;}
+      if(!old.br&&v.br)old.br=v.br;
+      if(!old.rank&&v.rank)old.rank=v.rank;
+      if(!old.rp&&v.rp)old.rp=v.rp;
+      if(!old.premium&&v.premium)old.premium=true;
+      if(!old.img&&v.img)old.img=v.img;
+    });
+    // Catalogue de recherche : uniquement les véhicules standards avec un coût RP connu.
+    // Les prix personnalisés sauvegardés restent prioritaires, puis le coût du catalogue.
+    return out.filter(function(v){
+      if(v.premium || v.is_premium || v.is_pack || v.on_marketplace) return false;
+      var cost=Number((S.costs&&S.costs[v.id])!=null ? S.costs[v.id] : v.rp);
+      return (Number.isFinite(cost) && cost>0) || String(v.id||'').indexOf('w-')===0;
+    });
+  }
+  function costOf(v){if(!v||v.premium)return 0;var saved=S.costs&&S.costs[v.id];return Number(saved!=null&&saved!==''?saved:v.rp)||0}
+  function findV(id){if(!id)return undefined;var f=catalog().filter(function(v){return v.id===id})[0];if(f)return f.premium?undefined:f;if(S.selVeh&&S.selVeh.id===id){var byName=catalog().filter(function(v){return norm(v.name)===norm(S.selVeh.name)&&norm(v.nation)===norm(S.selVeh.nation)})[0];if(byName){S.sel=byName.id;S.selVeh=byName;return byName}return S.selVeh}return undefined}
+  var CLS={tank:'Char',air:'Avion',heli:'Hélicoptère',ship:'Navire'};
+  var ICON={
+    tank:'<rect x="5" y="28" width="38" height="10" rx="5"/><rect x="14" y="18" width="18" height="10" rx="2"/><rect x="30" y="21" width="15" height="3" rx="1.5"/>',
+    air:'<path d="M24 4l3 14 17 9v4l-17-4-1 9 5 4v3l-7-2-7 2v-3l5-4-1-9-17 4v-4l17-9z"/>',
+    heli:'<rect x="6" y="9" width="36" height="3" rx="1.5"/><rect x="22" y="12" width="4" height="7"/><ellipse cx="24" cy="26" rx="12" ry="8"/><rect x="34" y="24" width="13" height="3" rx="1.5"/>',
+    ship:'<path d="M4 31h40l-6 10H10z"/><rect x="14" y="21" width="16" height="10" rx="2"/><rect x="30" y="13" width="3" height="18"/>'
+  };
+  function imageFallback(img, cls){if(!img)return;img.onerror=null;cls=String(cls||'tank').trim();img.outerHTML='<svg viewBox="0 0 48 48">'+(ICON[cls]||ICON.tank)+'</svg>'; }
+  window.imageFallback=imageFallback;
+  function iconHtml(v){
+    if(!v)return '<svg viewBox="0 0 48 48">'+ICON.tank+'</svg>';
+    if(v.img)return '<img alt="Image de '+esc(v.name||'véhicule')+'" loading="lazy" referrerpolicy="no-referrer" src="'+esc(v.img)+'" onerror="imageFallback(this, \' '+(v.cls||'tank')+' \' )">';
+    return '<svg viewBox="0 0 48 48">'+(ICON[v.cls]||ICON.tank)+'</svg>';
+  }
+
+  /* ---------- Chronomètres ---------- */
+  function sessionMs(){return sum(S.sessions,function(x){return x.end-x.start})+(S.sessionStart?Date.now()-S.sessionStart:0)}
+  function tick(){
+    $('sTime').textContent=hms(S.sessionStart?Date.now()-S.sessionStart:0);
+    $('gTime').textContent=hms(S.gameStart?Date.now()-S.gameStart:0);
+    $('cTime').textContent=hm(sessionMs());
+  }
+  function renderButtons(){
+    $('sBtn').textContent=S.sessionStart?'Arrêter la session':'Démarrer';
+    $('gBtn').textContent=S.gameStart?'Fin de partie':'Début de partie';
+  }
+  function startSession(){if(!S.sessionStart)S.sessionStart=Date.now()}
+  function stopSession(){if(S.sessionStart){S.sessions.push({start:S.sessionStart,end:Date.now()});S.sessionStart=null}}
+  $('sBtn').onclick=function(){S.sessionStart?stopSession():startSession();save();renderButtons();tick();renderGoal()};
+  $('gBtn').onclick=function(){
+    if(!S.gameStart){startSession();S.gameStart=Date.now()}
+    else{var min=Math.max(1,Math.round((Date.now()-S.gameStart)/60000));S.gameStart=null;$('fMin').value=min;$('fRp').focus()}
+    save();renderButtons();tick();
+  };
+
+  /* ---------- Statistiques ---------- */
+  function renderStats(){
+    var E=S.entries,n=E.length,rp=sum(E,function(e){return e.rp}),sl=sum(E,function(e){return e.sl});
+    var timed=E.filter(function(e){return e.min>0}),tm=sum(timed,function(e){return e.min});
+    var wins=E.filter(function(e){return e.won}).length;
+    $('cN').textContent=nf.format(n);
+    $('cRp').textContent=nf.format(rp);
+    $('cSl').textContent=nf.format(sl);
+    $('cAvg').textContent=n?nf.format(rp/n):'—';
+    $('cRph').textContent=tm?nf.format(sum(timed,function(e){return e.rp})*60/tm):'—';
+    $('cWr').textContent=n?nf.format(wins*100/n)+' %':'—';
+    renderGoal();renderDashboard();
+  }
+
+  /* ---------- Objectif véhicule + estimation ---------- */
+  function fmtDur(h){var m=Math.round(h*60);return m<60?m+' min':Math.floor(m/60)+' h '+pad(m%60)}
+  function norm(x){return String(x||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim()}
+  function toRP(x){var n=String(x==null?'':x).replace(/[^0-9]/g,'');return n?Number(n):0}
+  function entryBelongsToGoal(e,v){if(!v)return false;if(e.goalId)return String(e.goalId)===String(v.id);var played=norm(e.veh);return !!played&&played===norm(v.name)}
+  function updateLocalStatus(){var el=$('localStatus');if(el){var n=catalog().length;var a=API_VEHICLES.length;el.innerHTML=a?'<strong>API connectée / cache local :</strong> '+nf.format(a)+' véhicules reçus de la source, '+nf.format(n)+' véhicules disponibles au total.':'<strong>Catalogue de secours :</strong> '+nf.format(n)+' véhicules disponibles localement. L’API n’est pas connectée ; certains véhicules de secours peuvent ne pas avoir leur coût RP. Cliquez sur « Actualiser le catalogue » pour réessayer. L’API ne fournit pas vos RP de compte ni votre progression en direct.'}}
+
+  var searchActive=false, datalistSignature='';
+  function renderSelect(){
+    updateLocalStatus();
+    var dl=$('playVehOptions');
+    if(dl){
+      var source=catalog(),signature=source.length+'|'+source.map(function(v){return v.id+'|'+v.name+'|'+v.nation+'|'+v.br+'|'+v.cls}).join('~');
+      // Le datalist ne change pas pendant une recherche : ne le reconstruire qu'en cas de changement du catalogue.
+      if(signature!==datalistSignature){
+        var names=source.slice().sort(function(a,b){return a.name.localeCompare(b.name,'fr',{numeric:true})});
+        dl.innerHTML=names.map(function(v){return '<option value="'+esc(v.name)+'">'+esc([v.nation,CLS[v.cls],v.br?'BR '+v.br:''].filter(Boolean).join(' · '))+'</option>'}).join('');
+        datalistSignature=signature;
+      }
+    }
+
+    var q=norm($('vSearch').value).split(/\s+/).filter(Boolean);
+    var list=$('vList');
+    // Le menu ne s'ouvre que pendant une recherche active.
+    if(!searchActive||!q.length){list.innerHTML='';list.style.display='none';return;}
+    list.style.display='block';
+    var all=catalog().filter(function(v){
+      var h=norm(v.name);
+      var meta=norm([v.nation,CLS[v.cls],v.br,v.rank?'rang '+v.rank:'',v.premium?'premium':'',v.status].filter(Boolean).join(' '));return q.every(function(t){return h.indexOf(t)>-1||meta.indexOf(t)>-1});
+    }).sort(function(a,b){return a.name.localeCompare(b.name,'fr',{numeric:true})});
+    var shown=all.slice(0,40),o='';
+    if(!q.length && all.length)o='<div class=\"vi-e\">Choisissez un véhicule ou saisissez son nom dans la recherche.</div>';
+    shown.forEach(function(v){
+      o+='<div class="vi'+(v.id===S.sel?' on':'')+'" data-id="'+esc(v.id)+'"><span class="vi-i">'+iconHtml(v)+'</span><span class="vi-n"><b>'+esc(v.name)+'</b><small>'+esc([v.nation,CLS[v.cls],v.rank?'Rang '+v.rank:'',v.br?'BR '+v.br:'',v.premium?'Premium':''].filter(Boolean).join(' · '))+'</small></span><span class="vi-c">'+(v.premium?'Sans coût RP':(costOf(v)?nf.format(costOf(v))+' RP':'coût indisponible'))+'</span></div>';
+    });
+    if(!all.length)o='<div class="vi-e">Aucun véhicule trouvé. Essayez un autre nom ou filtre.</div>';
+    else if(all.length>shown.length)o+='<div class="vi-e">'+nf.format(all.length)+' résultats — affinez la recherche pour voir la suite.</div>';
+    list.innerHTML=o;
+  }
+  function apiVehicle(x){
+    if(!x||typeof x!=='object')return null;
+    var typ=String(x.vehicle_type||x.type||x.class||'').toLowerCase();
+    var cls=/heli/.test(typ)?'heli':(/ship|boat|frigate|destroyer|cruiser|battleship|barge|submarine|naval|carrier/.test(typ)?'ship':(/fighter|bomber|assault|attacker|air|plane/.test(typ)?'air':'tank'));
+    var country=String(x.country||x.operator_country||x.nation||'');
+    var nationMap={usa:'États-Unis',us:'États-Unis',germany:'Allemagne',ussr:'URSS',russia:'URSS',britain:'Grande-Bretagne',uk:'Grande-Bretagne',japan:'Japon',china:'Chine',italy:'Italie',france:'France',sweden:'Suède',israel:'Israël'};
+    var nation=nationMap[country.toLowerCase()]||(country?country.replace(/_/g,' ').replace(/^./,function(c){return c.toUpperCase()}):'');
+    var loc=x.localization||x.localisation||x.localized_name||x.localizedName||x.names||{};
+    var localName=typeof loc==='string'?loc:(loc.en||loc['en-US']||loc.name||loc.vehicle||loc.fr||'');
+    var rawName=localName||x.display_name||x.displayName||x.name||'';
+    var ident=String(rawName||x.identifier||x.id||'').replace(/[_-]+/g,' ').trim();
+    if(!rawName){ident=ident.replace(/^(usa|germ|ussr|uk|jp|cn|it|fr|sw|il)\s+/i,'').replace(/\b[a-z]/g,function(c){return c.toUpperCase()});}
+    if(!ident)return null;
+    var br=x.realistic_ground_br!=null?x.realistic_ground_br:(x.realistic_br!=null?x.realistic_br:x.arcade_br);
+    var rp=Number(x.req_exp!=null?x.req_exp:(x.value!=null?x.value:x.research_cost||0)); if(!Number.isFinite(rp)||rp<0)rp=0;
+    var era=x.era!=null?String(x.era):String(x.rank||'');
+    // Accepter les variantes de champs image utilisées par les différentes versions de l'API.
+    var img=x.image_url||x.imageUrl||x.image||x.img||x.image_link||x.imageLink||x.vehicle_image||x.vehicleImage||x.statcard_image||x.statcardImage||x.stat_card_image||x.icon_url||x.icon||x.thumbnail||x.photo||x.images||x.media||'';
+    if(img&&typeof img==='object')img=img.url||img.src||img.href||img.original||img.large||img.medium||img.thumbnail||img.statcard||img.stat_card||img.image||img.techtree||'';
+    if(typeof img==='string')img=img.trim();else img='';
+    if(img&&img.startsWith('//'))img='https:'+img;
+    if(img&&!/^https?:\/\//i.test(img))img='';
+    function tf(z){return z===true||z===1||String(z).toLowerCase()==='true'}var premium=tf(x.is_premium)||tf(x.isPremium)||tf(x.premium)||tf(x.is_pack)||tf(x.isPack)||tf(x.on_marketplace)||tf(x.marketplace)||tf(x.event_vehicle)||tf(x.is_event)||tf(x.is_gift)||tf(x.is_kill_streak)||tf(x.killstreak);
+    return {id:'api-'+String(x.identifier||x.id||ident),name:ident,nation:nation,cls:cls,rp:rp,br:br==null?'':String(br),rank:era,premium:premium,status:x.squadron_vehicle?'Escadron':'',img:img};
+  }
+  async function syncApi(){
+    var el=$('localStatus'),btn=$('apiRetry');if(btn)btn.disabled=true;
+    if(el)el.innerHTML='<strong>Catalogue :</strong> connexion à War Thunder Vehicles API…';
+    try{
+      var all=[],limit=100,hosts=['https://wtvehiclesapi.duckdns.org/api/vehicles','https://www.wtvehiclesapi.sgambe.serv00.net/api/vehicles','https://wtvehiclesapi.sgambe.serv00.net/api/vehicles'],host='',page=1,firstRows=null,firstBody=null,lastError=null;
+      function extractRows(body){
+        if(Array.isArray(body))return body;
+        if(!body||typeof body!=='object')return [];
+        var candidates=[body.vehicles,body.items,body.results,body.data,body.docs,body.records,body.content,body.rows];
+        for(var i=0;i<candidates.length;i++){
+          var c=candidates[i];
+          if(Array.isArray(c))return c;
+          if(c&&typeof c==='object'){
+            var nested=[c.vehicles,c.items,c.results,c.docs,c.records,c.content,c.rows];
+            for(var j=0;j<nested.length;j++)if(Array.isArray(nested[j]))return nested[j];
+          }
+        }
+        return [];
+      }
+      async function request(url){
+        var controller=typeof AbortController!=='undefined'?new AbortController():null;
+        var timer=controller?setTimeout(function(){controller.abort()},45000):null;
+        // Lorsque le tracker est lancé par le serveur local fourni, les appels passent
+        // par un relais local afin d'éviter les blocages CORS du navigateur.
+        var localHost=location.hostname==='127.0.0.1'||location.hostname==='localhost';
+        var fetchUrl=localHost?('/proxy?url='+encodeURIComponent(url)):url;
+        try{
+          var response=null,lastErr=null,tries=[url].concat(localHost?['/proxy?url='+encodeURIComponent(url)]:[]).concat(['https://api.allorigins.win/raw?url='+encodeURIComponent(url),'https://corsproxy.io/?'+encodeURIComponent(url)]);
+          for(var ti=0;ti<tries.length;ti++){try{var r=await fetch(tries[ti],{method:'GET',cache:'no-store',signal:controller?controller.signal:undefined});if(r.ok){response=r;break}lastErr=new Error('HTTP '+r.status)}catch(e){lastErr=e}}
+          if(!response)throw lastErr||new Error('Réseau indisponible');
+          if(!response.ok)throw new Error('HTTP '+response.status+' lors de la requête API');
+          return await response.json();
+        }finally{if(timer)clearTimeout(timer)}
+      }
+      // Certains déploiements attendent une pagination commençant à 1, d’autres à 0.
+      var firstUrls=[];hosts.forEach(function(h){firstUrls.push(h+'?limit='+limit+'&page=1&excludeEventVehicles=false&excludeKillstreak=false',h+'?limit='+limit+'&page=0&excludeEventVehicles=false&excludeKillstreak=false',h+'?limit='+limit+'&offset=0',h+'?page=1',h)});
+      for(var q=0;q<firstUrls.length;q++){
+        try{var candidate=await request(firstUrls[q]);var candidateRows=extractRows(candidate);if(candidateRows.length){firstBody=candidate;firstRows=candidateRows;host=firstUrls[q].split('?')[0];page=firstUrls[q].indexOf('page=0')>=0?0:1;break;}lastError=new Error('Réponse JSON reçue, mais aucun tableau de véhicules reconnu.');}
+        catch(e){lastError=e;}
+      }
+      if(!firstRows)throw lastError||new Error('Aucune donnée de véhicule reçue.');
+      firstRows.forEach(function(x){var v=apiVehicle(x);if(v)all.push(v)});
+      if(el)el.innerHTML='<strong>Synchronisation en cours…</strong> '+nf.format(all.length)+' véhicules reçus.';
+      var prevFirst=firstRows[0];
+      while(firstRows.length>=limit&&page<100){
+        page++;
+        var body=await request(host+'?limit='+limit+'&page='+page+'&excludeEventVehicles=false&excludeKillstreak=false');
+        var rows=extractRows(body);if(!rows.length)break;if(JSON.stringify(rows[0])===JSON.stringify(prevFirst))break;prevFirst=rows[0];
+        rows.forEach(function(x){var v=apiVehicle(x);if(v)all.push(v)});
+        if(el)el.innerHTML='<strong>Synchronisation en cours…</strong> '+nf.format(all.length)+' véhicules reçus (page '+page+').';
+        firstRows=rows;
+      }
+      var seen={};API_VEHICLES=all.filter(function(v){if(seen[v.id])return false;seen[v.id]=1;return true});
+      if(!API_VEHICLES.length)throw new Error('La réponse API ne contient aucun véhicule exploitable.');
+      try{localStorage.setItem(API_KEY,JSON.stringify(API_VEHICLES))}catch(e){}
+      try{localStorage.setItem(API_KEY+'.ts',String(Date.now()))}catch(e){}
+      if(el)el.innerHTML='<strong>API synchronisée :</strong> '+nf.format(API_VEHICLES.length)+' véhicules récupérés et sauvegardés dans ce navigateur.';
+    }catch(err){
+      var detail=err&&err.name==='AbortError'?'Délai dépassé (45 s).':(err&&err.message?err.message:'Erreur réseau ou CORS.');
+      if(el)el.innerHTML='<strong>'+(API_VEHICLES.length?'API indisponible — cache utilisé':'Échec de connexion API')+':</strong> '+(API_VEHICLES.length?nf.format(API_VEHICLES.length)+' véhicules du cache sont conservés. ':'le catalogue de secours reste disponible. ')+'Détail : '+esc(detail)+'. Si tu ouvres ce fichier en double-cliquant dessus et que le navigateur bloque les requêtes CORS, lance-le via un serveur local (ex. VS Code Live Server).';
+    }finally{if(btn)btn.disabled=false;renderSelect();renderGoal();}
+  }
+  $('apiRetry').onclick=syncApi;
+
+  var searchFrame=0;
+  $('vSearch').onfocus=function(){this.select();};
+  $('vSearch').oninput=function(){
+    searchActive=true;
+    if(searchFrame)cancelAnimationFrame(searchFrame);
+    var field=this;
+    searchFrame=requestAnimationFrame(function(){searchFrame=0;renderSelect();});
+  };
+  $('playVeh').oninput=function(){S.currentVeh=this.value.trim();S.lastVeh=S.currentVeh;$('fVeh').value=S.currentVeh;save();};
+  $('playVeh').onchange=function(){S.currentVeh=this.value.trim();S.lastVeh=S.currentVeh;$('fVeh').value=S.currentVeh;save();};
+  $('vList').onclick=function(ev){
+    var el=ev.target.closest&&ev.target.closest('.vi');
+    if(!el)return;
+    S.sel=el.getAttribute('data-id');var v=findV(S.sel);if(v)S.selVeh=v;
+    if(v){
+      S.pOwnedByVehicle=S.pOwnedByVehicle||{};
+      $('pOwned').value=String(Object.prototype.hasOwnProperty.call(S.pOwnedByVehicle,v.id)?S.pOwnedByVehicle[v.id]:'');
+      S.pOwned=String($('pOwned').value||'');
+      S.goalRpBaseline=sum(S.entries,function(e){return Math.max(0,Number(e.rp)||0)});
+      var c=costOf(v);S.pTarget=c?String(c):'';$('pTarget').value=S.pTarget;$('vSearch').value=v.name;
+      // Le véhicule visé devient aussi le véhicule courant pour les prochaines parties,
+      // afin que les RP saisis soient bien attribués à cet objectif par défaut.
+      S.currentVeh=v.name;S.lastVeh=v.name;
+      $('playVeh').value=v.name;$('fVeh').value=v.name;
+    }
+    searchActive=false;save();renderSelect();renderGoal();
+  };
+  function renderGoal(){
+    var v=findV(S.sel);
+    $('vImg').innerHTML=iconHtml(v);
+    $('vName').textContent=v?v.name:'Aucun véhicule choisi';
+    if(v&&!searchActive&&document.activeElement!==$('vSearch'))$('vSearch').value=v.name;
+    $('vMeta').textContent=v?[v.nation,CLS[v.cls],v.rank?'Rang '+v.rank:'',v.br?'BR '+v.br:'',v.premium?'Premium':''].filter(Boolean).join(' · '):'Choisissez un véhicule ci-dessous.';
+
+    // Ne compter que les RP des parties jouées avec le véhicule ciblé.
+    // Le champ manuel correspond aux RP déjà présents dans la recherche en jeu.
+    var E=S.entries;
+    var rp=v?sum(E,function(e){return entryBelongsToGoal(e,v)?Math.max(0,toRP(e.rp)):0}):0;
+    S.pOwnedByVehicle=S.pOwnedByVehicle||{};
+    var ownedInput=v?(Object.prototype.hasOwnProperty.call(S.pOwnedByVehicle,v.id)?S.pOwnedByVehicle[v.id]:''):S.pOwned;
+    if(document.activeElement!==$('pOwned'))$('pOwned').value=String(ownedInput==null?'':ownedInput);
+    var o=Math.max(0,toRP(ownedInput));
+    var catalogCost=v?costOf(v):0;
+    var t=Math.max(0,Number(catalogCost)||Number(S.pTarget)||Number($('pTarget').value)||0),cur=o+rp;
+    $('pTarget').value=t>0?String(t):'';S.pTarget=t>0?String(t):'';
+    var pct=t>0?Math.max(0,Math.min(100,cur*100/t)):0;
+    var rest=t>0?Math.max(0,t-cur):null;
+    var bar=$('pBar'),track=bar.parentElement;
+    bar.style.display='block';bar.style.height='100%';bar.style.width=pct+'%';
+    bar.style.minWidth=(pct>0?'2px':'0');
+    track.setAttribute('aria-valuenow',String(Math.round(pct)));
+    $('pPct').textContent=Math.round(pct)+' %';
+    track.title=Math.round(pct)+' % de progression';
+    $('pOwnedShown').textContent=nf.format(o);
+    $('pEarnedShown').textContent=nf.format(rp);
+    $('pTotalShown').textContent=nf.format(cur);
+    $('pRemainingShown').textContent=rest===null?'—':nf.format(rest);
+    var eT=$('eTime'),eG=$('eGames'),eD=$('eDate');
+    eT.textContent=eG.textContent=eD.textContent='—';
+    if(t<=0){$('pText').textContent=v?('RP déjà acquis : '+nf.format(o)+' + RP gagnés en parties : '+nf.format(rp)+' = '+nf.format(cur)+' RP au total. '+(v.premium?'Véhicule Premium : pas de coût de recherche classique.':'Coût RP indisponible : impossible de calculer les RP restants tant que le coût n’est pas connu.')):'Choisissez un véhicule dans le catalogue pour suivre votre progression.';return}
+    $('pText').textContent=nf.format(cur)+' / '+nf.format(t)+' RP ('+nf.format(Math.min(100,cur*100/t))+' %) — '+(rest===0?'Véhicule débloqué !':'il te manque '+nf.format(rest)+' RP.');
+    if(rest===0){eT.textContent='Débloqué 🎉';eG.textContent='0';eD.textContent='Maintenant';return}
+    var goalGames=E.filter(function(x){return entryBelongsToGoal(x,v)});
+    if(goalGames.length&&rp>0)eG.textContent='≈ '+nf.format(Math.ceil(rest/(rp/goalGames.length)));
+    else eG.textContent='—';
+    var timed=E.filter(function(x){return entryBelongsToGoal(x,v)&&x.min>0}),tm=sum(timed,function(x){return x.min});
+    if(!tm||!sum(timed,function(x){return x.rp})){eT.textContent='Renseignez la durée de quelques parties';return}
+    var rph=sum(timed,function(x){return x.rp})*60/tm,hoursLeft=rest/rph;
+    eT.textContent='≈ '+fmtDur(hoursLeft);
+    var starts=S.sessions.map(function(s){return s.start}).concat(E.map(function(e){return e.t}));
+    if(S.sessionStart)starts.push(S.sessionStart);
+    var span=Math.max(1,(Date.now()-Math.min.apply(null,starts))/864e5);
+    var hPerDay=sessionMs()/36e5/span;
+    if(hPerDay<0.05){eD.textContent='Utilisez le chrono de session';return}
+    var days=hoursLeft/hPerDay;
+    eD.textContent=days>3650?'Dans plus de 10 ans':new Date(Date.now()+days*864e5).toLocaleDateString('fr-FR',{day:'numeric',month:'long',year:'numeric'});
+  }
+  function storeOwnedRp(){
+    var value=String($('pOwned').value||'').trim();
+    S.pOwnedByVehicle=S.pOwnedByVehicle||{};
+    if(S.sel){S.pOwnedByVehicle[S.sel]=value;S.pOwned=value;}
+    else{S.pOwned=value;}
+    save();
+    renderGoal();
+    // Re-apply the typed value after rendering so the input never appears to revert while typing.
+    $('pOwned').value=value;
+  }
+  $('pOwned').addEventListener('input',storeOwnedRp);
+  $('pOwned').addEventListener('change',storeOwnedRp);
+
+
+  /* ---------- Tableau de bord quotidien ---------- */
+  function dayKey(t){var d=new Date(t);return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())}
+  function dayLabel(key){var p=key.split('-');return new Date(Number(p[0]),Number(p[1])-1,Number(p[2])).toLocaleDateString('fr-FR',{weekday:'short',day:'2-digit',month:'2-digit'})}
+  function renderLeaderboard(){
+    var groups={};S.entries.forEach(function(e){var name=String(e.veh||'').trim();if(!name||name==='—')return;var key=norm(name),g=groups[key]||(groups[key]={name:name,games:0,rp:0,timedRp:0,min:0,timed:0});g.games++;g.rp+=Number(e.rp)||0;if(Number(e.min)>0){g.min+=Number(e.min);g.timedRp+=Number(e.rp)||0;g.timed++;}});
+    var rows=Object.keys(groups).map(function(k){var g=groups[k];g.rph=g.min>0?g.timedRp*60/g.min:0;return g}).filter(function(g){return g.min>0}).sort(function(a,b){return b.rph-a.rph});
+    $('lbCount').textContent=nf.format(rows.length);$('lbBest').textContent=rows.length?nf.format(Math.round(rows[0].rph))+' RP/h':'—';$('leaderRows').innerHTML=rows.map(function(g,i){return '<tr><td>'+(i+1)+'</td><td><b>'+esc(g.name)+'</b><div class="small-muted">'+g.games+' partie(s) enregistrée(s)</div></td><td>'+g.timed+'</td><td>'+nf.format(g.rp)+'</td><td><b>'+nf.format(Math.round(g.rph))+'</b></td></tr>'}).join('');$('leaderEmpty').style.display=rows.length?'none':'block';
+  }
+  function renderDashboard(){
+    if(!$('dailyChart'))return;
+    var now=new Date(),days=[];
+    for(var i=6;i>=0;i--){var d=new Date(now.getFullYear(),now.getMonth(),now.getDate()-i);days.push(dayKey(d.getTime()))}
+    var map={};days.forEach(function(k){map[k]={rp:0,sl:0,n:0,min:0}});
+    S.entries.forEach(function(e){var k=dayKey(e.t);if(!map[k])map[k]={rp:0,sl:0,n:0,min:0};map[k].rp+=Number(e.rp)||0;map[k].sl+=Number(e.sl)||0;map[k].n++;map[k].min+=Number(e.min)||0});
+    var today=map[dayKey(Date.now())]||{rp:0,sl:0,n:0,min:0},week=days.reduce(function(a,k){a.rp+=map[k].rp;a.n+=map[k].n;return a},{rp:0,n:0});
+    $('dTodayRp').textContent=nf.format(today.rp);$('dTodayTime').textContent=today.min>=60?Math.floor(today.min/60)+' h '+(today.min%60)+' min':today.min+' min';$('dWeekRp').textContent=nf.format(week.rp);$('dWeekGames').textContent=nf.format(week.n);
+    var max=Math.max(1,...days.map(function(k){return map[k].rp}));$('dailyChart').innerHTML=days.map(function(k){var v=map[k],height=v.rp?Math.max(5,v.rp/max*100):2;return '<div class="chart-col"><div class="chart-value">'+(v.rp?nf.format(v.rp):'')+'</div><div class="chart-bar-wrap"><div class="chart-bar'+(k===dayKey(Date.now())?' today':'')+'" title="'+esc(dayLabel(k)+': '+nf.format(v.rp)+' RP')+'" style="height:'+height+'%"></div></div><div class="chart-label">'+esc(dayLabel(k).split(' ')[0])+'</div></div>'}).join('');
+    $('dailyRows').innerHTML=days.slice().reverse().map(function(k){var v=map[k];return '<tr><td>'+esc(dayLabel(k))+'</td><td>'+nf.format(v.n)+'</td><td>'+nf.format(v.rp)+'</td><td>'+nf.format(v.sl)+'</td><td>'+v.min+' min</td></tr>'}).join('');$('dailyEmpty').style.display=S.entries.length?'none':'block';
+    var wins=S.entries.filter(function(e){return e.won}).length,loss=S.entries.length-wins,rate=S.entries.length?wins*100/S.entries.length:0,mins=sum(S.entries,function(e){return Number(e.min)||0}),rp=sum(S.entries,function(e){return Number(e.rp)||0}),sl=sum(S.entries,function(e){return Number(e.sl)||0});
+    $('dWinRate').textContent=S.entries.length?Math.round(rate)+'%':'—';$('dWins').textContent=nf.format(wins);$('dLosses').textContent=nf.format(loss);$('winDonut').style.setProperty('--pct',rate+'%');$('dAvgRp').textContent=S.entries.length?nf.format(rp/S.entries.length):'—';$('dRph').textContent=mins?nf.format(rp*60/mins):'—';$('dTotalSl').textContent=nf.format(sl);$('dTotalTime').textContent=(mins/60).toLocaleString('fr-FR',{maximumFractionDigits:1})+' h';
+    var best=null;days.forEach(function(k){if(!best||map[k].rp>map[best].rp)best=k});$('dBestDay').textContent=best&&map[best].rp?dayLabel(best)+' · '+nf.format(map[best].rp)+' RP':'—';
+  }
+  document.querySelectorAll('[data-tab]').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('[data-tab]').forEach(function(x){x.classList.toggle('active',x===b)});document.querySelectorAll('.tab-page').forEach(function(x){x.classList.toggle('active',x.id===b.getAttribute('data-tab'))});if(b.getAttribute('data-tab')==='dashboard')renderDashboard();if(b.getAttribute('data-tab')==='leaderboard')renderLeaderboard();})});
+  $('newProfileBtn').onclick=function(){var label=prompt('Nom du nouveau profil local (ex. Compte War Thunder)');if(!label)return;label=label.trim();if(!label)return;var profiles=getProfiles(),key=label.toLowerCase().replace(/[^a-z0-9_-]+/g,'_');if(!key){alert('Choisissez un nom avec des lettres ou des chiffres.');return}if(profiles[key]){alert('Ce profil existe déjà.');return}profiles[key]=label;setProfiles(profiles);refreshProfileSelect();$('profileSelect').value=key;switchProfile(key);};
+  $('profileSelect').onchange=function(){switchProfile(this.value)};
+
+  /* ---------- Historique + saisie ---------- */
+  function renderRows(){
+    $('empty').style.display=S.entries.length?'none':'block';
+    $('rows').innerHTML=S.entries.map(function(e){
+      var d=new Date(e.t).toLocaleString('fr-FR',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});
+      return '<tr><td>'+d+'</td><td>'+esc(e.veh)+'</td><td class="'+(e.won?'win':'loss')+'">'+(e.won?'Victoire':'Défaite')+'</td><td>'+nf.format(e.rp)+'</td><td>'+nf.format(e.sl)+'</td><td>'+(e.min>0?e.min+' min':'—')+'</td><td><button class="btn ghost sm" data-id="'+esc(e.id)+'">Suppr.</button></td></tr>';
+    }).join('');
+  }
+  $('rows').onclick=function(ev){
+    var id=ev.target.getAttribute&&ev.target.getAttribute('data-id');
+    if(!id)return;
+    S.entries=S.entries.filter(function(e){return String(e.id)!==id});
+    save();renderRows();renderStats();renderDashboard();renderLeaderboard();
+  };
+  $('form').onsubmit=function(ev){
+    ev.preventDefault();
+    var rpS=$('fRp').value.trim(),slS=$('fSl').value.trim(),mS=$('fMin').value.trim();
+    var rp=Number(rpS),sl=Number(slS),min=mS===''?0:Number(mS),err=$('err');
+    if(rpS===''||!Number.isInteger(rp)||rp<0){err.textContent='RP invalides (entier positif attendu).';return}
+    if(slS===''||!Number.isInteger(sl)){err.textContent='Silver Lions invalides (entier attendu, négatif autorisé).';return}
+    if(!Number.isInteger(min)||min<0){err.textContent='Durée invalide (minutes, entier positif).';return}
+    err.textContent='';
+    var veh=($('playVeh').value.trim()||S.currentVeh||$('fVeh').value.trim()||(findV(S.sel)||{}).name)||'—';
+    S.lastVeh=veh==='—'?'':veh;S.currentVeh=S.lastVeh;
+    var target=findV(S.sel), goalId=target?String(target.id):'';
+    S.entries.unshift({id:Date.now()+'-'+Math.floor(Math.random()*1e4),t:Date.now(),veh:veh,goalId:goalId,rp:rp,sl:sl,won:$('fWon').checked,min:min});
+    $('fRp').value='';$('fSl').value='';$('fMin').value='';
+    save();renderRows();renderStats();renderGoal();renderDashboard();renderLeaderboard();
+  };
+  var armed=false;
+  $('clear').onclick=function(){
+    var b=$('clear');
+    if(!armed){armed=true;b.textContent='Cliquer pour confirmer';setTimeout(function(){armed=false;b.textContent="Effacer tout l'historique"},4000);return}
+    S.entries=[];S.sessions=[];S.goalRpBaseline=0;armed=false;b.textContent="Effacer tout l'historique";
+    save();renderRows();renderStats();renderDashboard();renderLeaderboard();tick();
+  };
+
+  /* ---------- Init ---------- */
+  $('pTarget').value=S.pTarget;$('pOwned').value=S.pOwned;$('vSearch').value=(findV(S.sel)||{}).name||'';$('fVeh').value=S.currentVeh||S.lastVeh;$('playVeh').value=S.currentVeh||S.lastVeh||'';
+  refreshProfileSelect();renderSelect();renderRows();renderStats();renderButtons();tick();renderDashboard();renderLeaderboard();
+  if(API_VEHICLES.length){$('localStatus').innerHTML='<strong>Catalogue en cache :</strong> '+nf.format(API_VEHICLES.length)+' véhicules chargés. Tentative de mise à jour…';}
+  if(EMBEDDED_RAW.length){var _ls=$('localStatus');if(_ls)_ls.innerHTML='<strong>Catalogue intégré :</strong> '+nf.format(API_VEHICLES.length)+' véhicules (copie de l’API). Le bouton de synchronisation tente une mise à jour en ligne.';}else{var _ts=0;try{_ts=Number(localStorage.getItem(API_KEY+'.ts')||0)}catch(e){}if(!API_VEHICLES.length||Date.now()-_ts>7*864e5){syncApi();}else{var _l=$('localStatus');if(_l)_l.innerHTML='<strong>Catalogue en cache :</strong> '+nf.format(API_VEHICLES.length)+' véhicules (mis à jour il y a '+Math.max(0,Math.floor((Date.now()-_ts)/864e5))+' j). Le bouton de synchronisation force une mise à jour.';}}
+  setInterval(tick,1000);
+})();
+</script>
+</body></html>
